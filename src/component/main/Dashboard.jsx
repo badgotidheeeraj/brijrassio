@@ -1,5 +1,8 @@
 import React from "react";
 
+
+import { Link } from "react-router-dom";
+
 const Dashboard = () => {
   return (
     <>
@@ -33,12 +36,9 @@ const Dashboard = () => {
                     </div>
                   </div>
                   <div className="card-footer d-flex align-items-center justify-content-between">
-                    <a
-                      className="small text-white text-decoration-none stretched-link"
-                      href="#"
-                    >
-                      View Details
-                    </a>
+                    <Link className="small text-white text-decoration-none stretched-link" to="/home">                      View Details
+                    </Link>
+
                     <div className="small text-white">
                       <i className="fas fa-angle-right" />
                     </div>

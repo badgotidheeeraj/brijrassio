@@ -7,15 +7,21 @@ const Navbar = ({ onToggleSidebar }) => {
       style={{ position: "fixed", top: 0, width: "100%", zIndex: 1030 }}
       className="sb-topnav navbar navbar-expand navbar-dark bg-dark"
     >
-      <Link className="navbar-brand ps-3" to={"/dash-board"} >Start Bootstrap</Link> 
+      {/* Brand Link */}
+      <Link className="navbar-brand ps-3" to="/dash-board">
+        Start Bootstrap
+      </Link>
+
+      {/* Sidebar Toggle Button */}
       <button
         className="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
         id="sidebarToggle"
-        onClick={onToggleSidebar} // <- added click handler here
+        onClick={onToggleSidebar}
       >
         <i className="fas fa-bars"></i>
       </button>
 
+      {/* Search Box */}
       <form className="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
         <div className="input-group">
           <input
@@ -30,38 +36,41 @@ const Navbar = ({ onToggleSidebar }) => {
         </div>
       </form>
 
+      {/* User Dropdown */}
       <ul className="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li className="nav-item dropdown">
-          <a
+
+          <Link
             className="nav-link dropdown-toggle"
             id="navbarDropdown"
-            href="#"
+            to="#"
             role="button"
             data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
             <i className="fas fa-user fa-fw"></i>
-          </a>
+          </Link>
           <ul
             className="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
           >
             <li>
-              <a className="dropdown-item" href="#!">
+              <Link className="dropdown-item" to="/settings">
                 Settings
-              </a>
+              </Link>
             </li>
             <li>
-              <a className="dropdown-item" href="#!">
+              <Link className="dropdown-item" to="/activity-log">
                 Activity Log
-              </a>
+              </Link>
             </li>
             <li>
               <hr className="dropdown-divider" />
             </li>
             <li>
-              <a className="dropdown-item" href="#!">
+              <Link className="dropdown-item" to="/logout">
                 Logout
-              </a>
+              </Link>
             </li>
           </ul>
         </li>
